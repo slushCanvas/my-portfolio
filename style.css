@@ -1,0 +1,175 @@
+/* changed the card size to feature the artwork more */
+:root {
+  --card-width: 180px;
+  --card-height: 220px;
+}
+
+body {
+  margin: 0;
+  background: url(img/background.png);
+  background-position: center;
+  background-size: cover;
+  color: #FDA635;
+  font-family: "Kanit", sans-serif;
+  text-shadow: 2px 2px 3px #E13D20;
+  min-height: 100vh;
+  
+  border-color: #E52195;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  border:4px ridge #E52195;
+  background-color: rgba(86,9,59,.25);
+  margin: 10px 200px;
+
+  /* -webkit-text-stroke: 0.1px #E52195; */
+}
+
+#ui-container {
+  text-align: center;
+}
+
+#ui-container h3 {
+  margin: 0;
+  display: inline-block;
+  font-size: 40px;
+  text-align: center;
+}
+
+#ui-container h3:first-child {
+  margin-right: 40px;
+}
+
+#card-container {
+  font-size: 0;
+  margin: 50px auto;
+  width: calc((var(--card-width) + 2vw + 12px) * 4);
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  margin: 1vw;
+  width: var(--card-width);
+  height: var(--card-height);
+  border: 2px solid transparent;  
+  overflow: hidden;
+}
+
+/* Style the two logo images themselves. */
+.card-down,
+.card-up {
+  /* Take images out of the flow. */
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  /* When facing away from the screen each image should be hidden. */
+  backface-visibility: hidden;
+  border-radius: 5px;
+  transition-duration: .3s;
+}
+
+.card-down {
+  background-image: url(img/card.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.card-up {
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.flipped .card-down {
+  transform: rotateY(180deg);
+}
+
+.flipped .card-up {
+  transform: rotateY(0deg);
+}
+
+.image-1 .card-up {
+  background-image: url(img/image-1.png), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-2 .card-up {
+  background-image: url(img/image-2.png), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-3 .card-up {
+  background-image: url(img/image-3.png), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-4 .card-up {
+  background-image: url(img/image-4.png), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-5 .card-up {
+  background-image: url(img/image-5.png), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.image-6 .card-up {
+  background-image: url(img/image-6.png), linear-gradient(#72dbf4, #72dbf4);
+}
+
+.glow {
+    border: 1px solid transparent;    
+    transition: border 0.1s linear, box-shadow 0.1s linear;
+}
+
+
+@keyframes border-glow {
+  from {
+    border: 2px solid transparent;   
+    box-shadow: none;
+  }
+
+  80% {
+    border-color: #34FFFF;
+    box-shadow: 0 0 10px #0FB7FC;
+  }
+
+  to {
+    border: 2px solid transparent;   
+    box-shadow: none;
+  }
+}
+
+.border-glow {
+  animation: border-glow 1s;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+}
+
+.reset-btn {
+	margin: 0 0 30px 0;
+	padding: 15px 30px;
+	/* background-color: #FDB13C; */
+  background-size: 200% auto;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FDB13C 0%, #fd797a  51%, #FE41B7  100%);
+	color: white;
+	border: 0px;
+	border-radius: 10px;
+	font-family: "Kanit", sans-serif;
+	font-size: 1.5em;
+  -webkit-text-stroke: .25px rgba(110,14,75, .75);
+  touch-action: manipulation;
+}
+
+.reset-btn:hover {
+	cursor: pointer;
+  background-position: right center;
+	background-color: #FDA233;
+}
+.reset-btn:active {
+  transform: scale(0.95);
+}
